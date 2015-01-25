@@ -1,0 +1,10 @@
+form(name="cnForm", ng-submit="wizard.goTo('^.card-holder')")
+  .form-group(ng-click="wizard.save()")
+    label.control-label Card number
+    input.form-control(ng-model="wizard.cardInfo.cardNumber"
+    placeholder="1234123412341234"
+    ng-pattern="wizard.Validate.cardNumberPattern"
+    required)
+  .row
+    .col-md-3
+      button.btn.btn-primary.btn-block(type="submit", ng-disabled="!cnForm.$valid") Next

@@ -1,0 +1,12 @@
+form(name="cvvForm", ng-submit="wizard.goTo('^.expiration-date')")
+  .row
+    .col-md-3
+      .form-group
+        label.control-label CVV
+        input(testapp-cvv="", ng-model="wizard.cardInfo.cvv")
+
+  .row
+    .col-md-3
+      button.btn.btn-block(type="submit" ui-sref="^.card-holder") Back
+    .col-md-3
+      button.btn.btn-primary.btn-block(type="submit", ng-disabled="!cvvForm.$valid") Next

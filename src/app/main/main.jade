@@ -1,0 +1,19 @@
+.container
+  .row
+    .col-md-12
+      ol.breadcrumb
+        li(ng-repeat="step in wizard.steps", ng-if="step.enabled")
+          a(ui-sref="{{'.' + step.state}}", ng-bind="step.name")
+
+  .row
+    .col-md-8
+      ui-view
+    .col-md-4
+      .well
+        div(ng-bind="wizard.cardInfo.cardNumber")
+        div(ng-bind="wizard.cardInfo.cardHolder")
+        div(ng-bind="wizard.cardInfo.cvv")
+        div(ng-if="wizard.cardInfo.expDate")
+          span(ng-bind="wizard.cardInfo.expDate.month")
+          | /
+          span(ng-bind="wizard.cardInfo.expDate.year")

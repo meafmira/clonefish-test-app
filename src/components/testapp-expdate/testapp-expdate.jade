@@ -1,0 +1,4 @@
+div.form-inline
+  select.form-control(ng-model="expDate.month", ng-options="month as month for month in months", ng-change="changeDate()")
+  |&nbsp;/&nbsp;
+  select.form-control(ng-model="expDate.year", ng-options="year as year for year in years", ng-change="changeDate()")
