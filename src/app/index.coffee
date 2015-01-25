@@ -1,10 +1,7 @@
-angular.module "testApp", ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap']
+main = require "./main"
+
+angular.module "testApp", ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router',
+                           'ui.bootstrap', main.name]
   .config ($stateProvider, $urlRouterProvider) ->
-    $stateProvider
-      .state "home",
-        url: "/",
-        templateUrl: "app/main/main.html",
-        controller: "MainCtrl"
 
     $urlRouterProvider.otherwise '/'
-

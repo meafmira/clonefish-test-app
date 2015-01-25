@@ -1,0 +1,27 @@
+.container
+  .row
+    .col-md-12
+      ol.breadcrumb
+        li
+          a(ui-sref=".card-number") Step 1
+        li
+          a(ui-sref=".card-holder") Step 2
+        li
+          a(ui-sref=".cvv") Step 3
+        li
+          a(ui-sref=".expiration-date") Step 4
+        li
+          a(href="#") Step 5
+
+  .row
+    .col-md-8
+      ui-view
+    .col-md-4
+      .well
+        div(ng-bind="wizard.cardInfo.cardNumber")
+        div(ng-bind="wizard.cardInfo.cardHolder")
+        div(ng-bind="wizard.cardInfo.cvv")
+        div
+          span(ng-bind="wizard.cardInfo.expDate.month")
+          | /
+          span(ng-bind="wizard.cardInfo.expDate.year")

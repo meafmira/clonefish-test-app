@@ -1,0 +1,10 @@
+form
+  .form-group
+    label.control-label Expiration date
+    input(ng-model="wizard.cardInfo.expDate", testapp-exp-date)
+
+  .row
+    .col-md-3
+      button.btn.btn-block(type="submit" ui-sref="^.cvv") Back
+    .col-md-3
+      button.btn.btn-primary.btn-block(type="submit" ui-sref="^.finish") Next

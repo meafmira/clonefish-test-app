@@ -1,0 +1,12 @@
+form
+  .form-group
+    label.control-label Card holder
+    input.form-control(ng-model="wizard.cardInfo.cardHolder"
+    placeholder="John Doe"
+    ng-pattern="/\\w+\\s\\w+/" required)
+
+  .row
+    .col-md-3
+      button.btn.btn-block(type="submit" ui-sref="^.card-number") Back
+    .col-md-3
+      button.btn.btn-primary.btn-block(type="submit" ui-sref="^.cvv") Next

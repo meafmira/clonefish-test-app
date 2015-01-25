@@ -1,0 +1,11 @@
+form
+  .form-group
+    label.control-label Card number
+    input.form-control(ng-model="wizard.cardInfo.cardNumber"
+    placeholder="1234123412341234"
+    ng-pattern="/^\\d{16}$/"
+    required)
+
+  .row
+    .col-md-3
+      button.btn.btn-primary.btn-block(type="submit" ui-sref="^.card-holder") Next
