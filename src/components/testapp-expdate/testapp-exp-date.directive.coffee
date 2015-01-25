@@ -3,7 +3,7 @@ getYears = ->
   year = date.getFullYear()
   [year .. year + 15]
 
-module.exports = ($timeout) ->
+module.exports = ($timeout, Validate) ->
   require: "ngModel"
   templateUrl: "components/testapp-expdate/testapp-expdate.html"
   replace: true
@@ -23,7 +23,7 @@ module.exports = ($timeout) ->
       else
         $timeout ->
           scope.expDate = angular.copy ngModelCtrl.$modelValue
-          if parseInt(scope.expDate.month) && parseInt(scope.expDate.year)
+          if Validate.expDateValidate(scope.expDate)
             ngModelCtrl.$setValidity "exp-date", true
           else
             ngModelCtrl.$setViewValue { year: currentYear, month: currentMonth }

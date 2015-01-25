@@ -2,16 +2,8 @@
   .row
     .col-md-12
       ol.breadcrumb
-        li
-          a(ui-sref=".card-number") Step 1
-        li
-          a(ui-sref=".card-holder") Step 2
-        li
-          a(ui-sref=".cvv") Step 3
-        li
-          a(ui-sref=".expiration-date") Step 4
-        li
-          a(href="#") Step 5
+        li(ng-repeat="step in wizard.steps", ng-if="step.enabled")
+          a(ui-sref="{{'.' + step.state}}", ng-bind="step.name")
 
   .row
     .col-md-8
@@ -21,7 +13,7 @@
         div(ng-bind="wizard.cardInfo.cardNumber")
         div(ng-bind="wizard.cardInfo.cardHolder")
         div(ng-bind="wizard.cardInfo.cvv")
-        div
+        div(ng-if="wizard.cardInfo.expDate")
           span(ng-bind="wizard.cardInfo.expDate.month")
           | /
           span(ng-bind="wizard.cardInfo.expDate.year")

@@ -10,7 +10,7 @@ digitsGenerator = ->
 
   digits
 
-module.exports = ->
+module.exports = (Validate) ->
   templateUrl: "components/testapp-cvv/testapp-cvv.html"
   replace: true
   require: "ngModel"
@@ -22,7 +22,7 @@ module.exports = ->
         scope.cvv = ""
       else
         scope.cvv = ngModelCtrl.$modelValue
-        if /^\d{3}$/.test scope.cvv
+        if Validate.cvvValidate(scope.cvv)
           ngModelCtrl.$setValidity "cvv", true
         else
           ngModelCtrl.$setViewValue ""

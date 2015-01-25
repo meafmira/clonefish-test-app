@@ -1,6 +1,7 @@
 wizardCtrl = require "./wizard.controller"
 cvvDirective = require "../../components/testapp-cvv/testapp-cvv.directive"
 expDateDirective = require "../../components/testapp-expdate/testapp-exp-date.directive"
+validateService = require "../../components/validate.service"
 
 module.exports = angular.module "testApp.main", []
 .config ($stateProvider) ->
@@ -31,5 +32,6 @@ module.exports = angular.module "testApp.main", []
       templateUrl: "app/main/finish.html"
 
 .controller "WizardCtrl", wizardCtrl
-.directive "testappCvv", cvvDirective
-.directive "testappExpDate", expDateDirective
+.directive  "testappCvv", cvvDirective
+.directive  "testappExpDate", expDateDirective
+.factory    "Validate", validateService
