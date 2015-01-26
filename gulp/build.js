@@ -77,7 +77,7 @@ gulp.task('html', ['inject', 'partials'], function () {
     .pipe($.rev())
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
-    .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
+    .pipe($.uglify({preserveComments: $.uglifySaveLicense, mangle: false}))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
     .pipe($.csso())
