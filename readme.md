@@ -1,5 +1,6 @@
 Test application for Clonefish
 =============================
+[Demo](http://miafmira.github.io/clonefish-test-app/)
 Develop
 -----------------------------
 1. npm install -g gulp bower
